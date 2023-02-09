@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto: базовая функциональность</title>
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="page">
+    <header class="header">
+      <img class="header__logo" src="/img/logo.png" alt="Место.">
+    </header>
+    <main class="main">
+      <div class="main__section-one">
+        <div class="main__profile-container">
+          <img class="profile-logo" src="./img/favicon.jpg" alt="Фавикон.">
+          <div class="main__profile">
+            <h1 class="main__title">Big Red Beard</h1>
+            <button class="main__edit-button hover-animation"></button>
+            <p class="main__description">Известный сноубордист по версии ChatGPT</p>
+          </div>
+        </div>
+        <button class="main__add-button hover-animation"></button>
+      </div>
+      <ul class="main__section-elements">
+        <li class="block">
+          <img class="block__image" src="/img/places/ivanovo.jpg" alt="Иваново.">
+          <div class="block__description-block">
+            <h3 class="block__description">Ivanovo, Russia</h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+
+        <li class="block">
+          <img class="block__image" src="/img/places/samara.jpg" alt="Самара.">
+          <div class="block__description-block">
+            <h3 class="block__description">Samara, Russia</h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+
+        <li class="block">
+          <img class="block__image" src="/img/places/kirkovsk.JPG" alt="Кировск.">
+          <div class="block__description-block">
+            <h3 class="block__description">
+              Kirovsk, Мурманская область, Россия
+            </h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+
+        <li class="block">
+          <img class="block__image" src="/img/places/kinerma.jpg" alt="Карелия.">
+          <div class="block__description-block">
+            <h3 class="block__description">Karelia, Kinerma, Russia</h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+
+        <li class="block">
+          <img class="block__image" src="/img/places/moscow.jpg" alt="Москва.">
+          <div class="block__description-block">
+            <h3 class="block__description">Moscow, Russia</h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+
+        <li class="block">
+          <img class="block__image" src="/img/places/vladivostok.jpg" alt="Владивосток.">
+          <div class="block__description-block">
+            <h3 class="block__description">Vladivostok, Russia</h3>
+            <button class="block__like hover-animation"></button>
+          </div>
+        </li>
+      </ul>
+      <div class="popup">
+        <div class="popup__container">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form">
+            <input type="text" placeholder="name" class="popup__input-name popup__input-style" value="Nice Smart Guy">
+            <input type="text" placeholder="description" class="popup__input-description popup__input-style" value="Известный обман на собесеодвании">
+            <button class="popup__button-save hover-animation">Сохранить</button>
+          </form>
+          <button class="popup__button-close hover-animation"></button>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+    </main>
+    <footer class="footer">
+      <p class="footer__descrition">© 2023 Mesto Russia</p>
+    </footer>
+  </body>
+</html>
