@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto: базовая функциональность</title>
     <link rel="icon" href="./img/favicon.png">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages/index.css">
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="/img/logo.png" alt="Место.">
+      <img class="header__logo" src="./img/logo.png" alt="Место.">
     </header>
     <main class="main">
       <div class="main__section-one">
         <div class="main__profile-container">
-          <img class="profile-logo" src="./img/favicon.jpg" alt="Фавикон.">
+          <img class="main__profile-logo" src="./img/favicon.jpg" alt="Фавикон.">
           <div class="main__profile">
             <h1 class="main__title">Big Red Beard</h1>
             <button class="main__edit-button hover-animation"></button>
@@ -25,53 +25,53 @@
         <button class="main__add-button hover-animation"></button>
       </div>
       <ul class="main__section-elements">
-        <li class="block">
-          <img class="block__image" src="/img/places/ivanovo.jpg" alt="Иваново.">
-          <div class="block__description-block">
-            <h3 class="block__description">Ivanovo, Russia</h3>
-            <button class="block__like hover-animation"></button>
+        <li class="element">
+          <img class="element__image" src="./img/places/ivanovo.jpg" alt="Иваново.">
+          <div class="element__description-block">
+            <h3 class="element__description">Ivanovo, Russia</h3>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
 
-        <li class="block">
-          <img class="block__image" src="/img/places/samara.jpg" alt="Самара.">
-          <div class="block__description-block">
-            <h3 class="block__description">Samara, Russia</h3>
-            <button class="block__like hover-animation"></button>
+        <li class="element">
+          <img class="element__image" src="./img/places/samara.jpg" alt="Самара.">
+          <div class="element__description-block">
+            <h3 class="element__description">Samara, Russia</h3>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
 
-        <li class="block">
-          <img class="block__image" src="/img/places/kirkovsk.JPG" alt="Кировск.">
-          <div class="block__description-block">
-            <h3 class="block__description">
+        <li class="element">
+          <img class="element__image" src="./img/places/kirkovsk.JPG" alt="Кировск.">
+          <div class="element__description-block">
+            <h3 class="element__description">
               Kirovsk, Мурманская область, Россия
             </h3>
-            <button class="block__like hover-animation"></button>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
 
-        <li class="block">
-          <img class="block__image" src="/img/places/kinerma.jpg" alt="Карелия.">
-          <div class="block__description-block">
-            <h3 class="block__description">Karelia, Kinerma, Russia</h3>
-            <button class="block__like hover-animation"></button>
+        <li class="element">
+          <img class="element__image" src="./img/places/kinerma.jpg" alt="Карелия.">
+          <div class="element__description-block">
+            <h3 class="element__description">Karelia, Kinerma, Russia</h3>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
 
-        <li class="block">
-          <img class="block__image" src="/img/places/moscow.jpg" alt="Москва.">
-          <div class="block__description-block">
-            <h3 class="block__description">Moscow, Russia</h3>
-            <button class="block__like hover-animation"></button>
+        <li class="element">
+          <img class="element__image" src="./img/places/moscow.jpg" alt="Москва.">
+          <div class="element__description-block">
+            <h3 class="element__description">Moscow, Russia</h3>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
 
-        <li class="block">
-          <img class="block__image" src="/img/places/vladivostok.jpg" alt="Владивосток.">
-          <div class="block__description-block">
-            <h3 class="block__description">Vladivostok, Russia</h3>
-            <button class="block__like hover-animation"></button>
+        <li class="element">
+          <img class="element__image" src="./img/places/vladivostok.jpg" alt="Владивосток.">
+          <div class="element__description-block">
+            <h3 class="element__description">Vladivostok, Russia</h3>
+            <button class="element__like hover-animation"></button>
           </div>
         </li>
       </ul>
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <script src="script.js"></script>
+      <script src="./blocks/index.js"></script>
     </main>
     <footer class="footer">
       <p class="footer__descrition">© 2023 Mesto Russia</p>

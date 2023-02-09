@@ -1,0 +1,12 @@
+.element__like {
+  height: 19px;
+  width: 25px;
+  align-self: center;
+  background-image: url(../../../img/like-nonactive.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  background-color: #fff;
+  box-sizing: content-box;
+  background-size: contain;
+}

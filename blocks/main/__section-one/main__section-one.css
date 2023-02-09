@@ -1,0 +1,28 @@
+.main__section-one {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  align-items: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 1020px) {
+  .main__section-one {
+    padding-left: 27px;
+    padding-right: 27px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main__section-one {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main__section-one {
+    padding: 38px 17px 36px;
+  }
+}

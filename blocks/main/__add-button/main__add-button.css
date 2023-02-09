@@ -1,0 +1,17 @@
+.main__add-button {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  background-image: url(../../../img/icon-plus.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 750px) {
+  .main__add-button {
+    margin-top: 36px;
+    width: 100%;
+  }
+}

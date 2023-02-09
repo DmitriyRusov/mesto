@@ -1,0 +1,19 @@
+.main__edit-button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  background-color: black;
+  background-image: url(../../../img/icon-pen.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .main__edit-button {
+    width: 18px;
+    height: 18px;
+    margin-top: 9px;
+  }
+}
