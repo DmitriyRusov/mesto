@@ -2,7 +2,7 @@
 
 ![YandexPracticum](https://raw.githubusercontent.com/DmitriyRusov/DmitriyRusov/071e302eb450431041158b263529fe6b3e0d9f10/yapracticum-black.svg)
 
-# **Проект:** ![Mesto](https://raw.githubusercontent.com/DmitriyRusov/mesto/main/img/logo-black.png)**🏂** #
+# **Проект:** ![Mesto](https://raw.githubusercontent.com/DmitriyRusov/mesto/main/images/logo-black.png)**🏂** #
 
 Одностраничный адаптивный сайт, с элементами JavaScript, собранный по макету Figma.
 

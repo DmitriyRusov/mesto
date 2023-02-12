@@ -1,96 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto: базовая функциональность</title>
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./pages/index.css">
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="./img/logo.png" alt="Mesto.">
+      <img class="header__logo" src="./images/logo.svg" alt="Место.">
     </header>
     <main class="main">
-      <div class="main__section-one">
-        <div class="main__profile-container">
-          <img class="main__profile-logo" src="./img/favicon.jpg" alt="Favicon.">
-          <div class="main__profile">
-            <h1 class="main__title">Big Red Beard</h1>
-            <button class="main__edit-button hover-animation"></button>
-            <p class="main__description">Известный сноубордист по версии ChatGPT</p>
+      <section class="profile">
+        <img class="profile__logo" src="./images/favicon.jpg" alt="Фавикон.">
+        <div class="profile__info">
+          <div class="profile__container">
+            <h1 class="profile__title">Big Red Beard</h1>
+            <button class="profile__edit-button hover-animation" type="button"></button>
           </div>
+          <p class="profile__description">Известный сноубордист по версии ChatGPT</p>
         </div>
-        <button class="main__add-button hover-animation"></button>
-      </div>
-      <ul class="main__section-elements">
+        <button class="profile__add-button hover-animation" type="button"></button>
+      </section>
+
+      <section class="elements">
+      <ul class="elements__section-elements">
         <li class="element">
-          <img class="element__image" src="./img/places/ivanovo.jpg" alt="Ivanovo.">
+          <img class="element__image" src="./images/places/ivanovo.jpg" alt="Иваново.">
           <div class="element__description-block">
             <h3 class="element__description">Ivanovo, Russia</h3>
-            <button class="element__like hover-animation"></button>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
 
         <li class="element">
-          <img class="element__image" src="./img/places/samara.jpg" alt="Samara.">
+          <img class="element__image" src="./images/places/samara.jpg" alt="Самара.">
           <div class="element__description-block">
             <h3 class="element__description">Samara, Russia</h3>
-            <button class="element__like hover-animation"></button>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
 
         <li class="element">
-          <img class="element__image" src="./img/places/kirkovsk.JPG" alt="Kirkovks.">
+          <img class="element__image" src="./images/places/kirkovsk.JPG" alt="Кировск.">
           <div class="element__description-block">
-            <h3 class="element__description">
-              Kirovsk, Мурманская область, Россия
-            </h3>
-            <button class="element__like hover-animation"></button>
+            <h3 class="element__description">Kirovsk, Мурманская область, Россия</h3>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
 
         <li class="element">
-          <img class="element__image" src="./img/places/kinerma.jpg" alt="Karelia.">
+          <img class="element__image" src="./images/places/kinerma.jpg" alt="Карелия.">
           <div class="element__description-block">
             <h3 class="element__description">Karelia, Kinerma, Russia</h3>
-            <button class="element__like hover-animation"></button>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
 
         <li class="element">
-          <img class="element__image" src="./img/places/moscow.jpg" alt="Moscow.">
+          <img class="element__image" src="./images/places/moscow.jpg" alt="Москва.">
           <div class="element__description-block">
             <h3 class="element__description">Moscow, Russia</h3>
-            <button class="element__like hover-animation"></button>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
 
         <li class="element">
-          <img class="element__image" src="./img/places/vladivostok.jpg" alt="Vladivostok.">
+          <img class="element__image" src="./images/places/vladivostok.jpg" alt="Владивосток.">
           <div class="element__description-block">
             <h3 class="element__description">Vladivostok, Russia</h3>
-            <button class="element__like hover-animation"></button>
+            <button type="button" class="element__like" aria-label="Нравится."></button>
           </div>
         </li>
       </ul>
+
+    </section>
       <div class="popup">
         <div class="popup__container">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form">
-            <input type="text" placeholder="name" class="popup__input-name popup__input-style" value="Nice Smart Guy">
-            <input type="text" placeholder="description" class="popup__input-description popup__input-style" value="Известный обман на собесеодвании">
-            <button class="popup__button-save hover-animation">Сохранить</button>
+          <form class="popup__form" name="popup-form">
+            <input type="text" placeholder="name" class="popup__input-name popup__input-style" name="input-name" value="Nice Smart Guy">
+            <input type="text" placeholder="description" class="popup__input-description popup__input-style" name="input-description" value="Известный обман на собесеодвании">
+            <button type="submit" class="popup__button-save">Сохранить</button>
           </form>
-          <button class="popup__button-close hover-animation"></button>
+          <button type="button" class="popup__button-close hover-animation"></button>
         </div>
       </div>
 
-      <script src="./blocks/index.js"></script>
     </main>
     <footer class="footer">
       <p class="footer__descrition">© 2023 Mesto Russia</p>
     </footer>
+    <script src="./script/index.js"></script>
   </body>
 </html>

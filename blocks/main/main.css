@@ -1,5 +1,6 @@
 .main {
   max-width: 880px;
+  /* min-width: 320px; */
   background-color: black;
   margin: 0 auto;
   color: #fff;

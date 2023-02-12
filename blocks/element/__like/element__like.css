@@ -1,12 +1,19 @@
 .element__like {
   height: 19px;
-  width: 25px;
+  width: 22px;
   align-self: center;
-  background-image: url(../../../img/like-nonactive.svg);
+  background-image: url(../../../images/like-nonactive.svg);
   background-repeat: no-repeat;
   background-position: center;
   border-style: none;
   background-color: #fff;
   box-sizing: content-box;
   background-size: contain;
+  flex-shrink: 0;
+  transition: opacity 0.5s linear;
+  cursor: pointer;
+}
+
+.element__like:hover {
+  opacity: 0.5;
 }
