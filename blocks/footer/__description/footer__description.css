@@ -1,4 +1,4 @@
-.footer__descrition {
+.footer__description {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .footer__descrition {
+  .footer__description {
     font-size: 14px;
     line-height: 17px;
   }
