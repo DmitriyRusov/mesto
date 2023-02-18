@@ -83,8 +83,8 @@ function eddCard(textDescription, link) {
   imageElement.src = link || "./images/places/yacubovich.jpg";
   imageElement.addEventListener("click", function (evt) {
     popUpImage.classList.add("popup_opened");
-    let bigImage = popUpImage.querySelector(".popup__image");
-    let bigImageDescription = popUpImage.querySelector(".popup__description");
+    const bigImage = popUpImage.querySelector(".popup__image");
+    const bigImageDescription = popUpImage.querySelector(".popup__description");
     bigImage.src = link || imageElement.src;
     bigImageDescription.textContent = textDescription || descriptionElement.textContent;
   });
