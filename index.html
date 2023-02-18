@@ -27,53 +27,16 @@
 
       <section class="elements">
         <ul class="elements__section-elements">
-          <!-- <li class="element">
-                        <img class="element__image" src="./images/places/ivanovo.jpg" alt="Иваново." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Ivanovo, Russia</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li>
-
-                    <li class="element">
-                        <img class="element__image" src="./images/places/samara.jpg" alt="Самара." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Samara, Russia</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li>
-
-                    <li class="element">
-                        <img class="element__image" src="./images/places/kirkovsk.JPG" alt="Кировск." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Kirovsk, Мурманская область, Россия</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li>
-
-                    <li class="element">
-                        <img class="element__image" src="./images/places/kinerma.jpg" alt="Карелия." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Karelia, Kinerma, Russia</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li>
-
-                    <li class="element">
-                        <img class="element__image" src="./images/places/moscow.jpg" alt="Москва." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Moscow, Russia</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li>
-
-                    <li class="element">
-                        <img class="element__image" src="./images/places/vladivostok.jpg" alt="Владивосток." />
-                        <div class="element__description-block">
-                            <h3 class="element__description">Vladivostok, Russia</h3>
-                            <button type="button" class="element__like" aria-label="Нравится."></button>
-                        </div>
-                    </li> -->
+          <template id="card-template">
+            <li class="element">
+              <img class="element__image" alt="Описание" src="#">
+              <div class="element__description-block">
+                <h3 class="element__description">Описание</h3>
+                <button class="element__like" aria-label="Нравится."></button>
+              </div>
+              <button class="element__delete-button" aria-label="Удалить."></button>
+            </li>
+          </template>
         </ul>
       </section>
       <div class="popup popup_type_account">
@@ -101,7 +64,7 @@
       <div class="popup popup_type_image">
         <div class="popup__container-image">
           <img class="popup__image" src="./images/places/yacubovich.jpg" alt="#">
-          <h3 class="popup__description">Грустный Якбович</h3>
+          <h3 class="popup__description">Грустный Якубович</h3>
           <button type="button" class="popup__button-close hover-animation"></button>
         </div>
       </div>
