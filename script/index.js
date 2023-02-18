@@ -136,7 +136,7 @@ function eddingCards(textDescription, link) {
   });
 
   let buttonDelete = document.createElement("button");
-  buttonDelete.classList.add("element__close-button");
+  buttonDelete.classList.add("element__delete-button");
   buttonDelete.setAttribute("aria-label", "Удалить.");
   buttonDelete.addEventListener("click", function () {
     elementContainer.remove(buttonDelete.parentElement);

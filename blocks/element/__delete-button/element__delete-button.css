@@ -1,11 +1,11 @@
-.element__close-button {
+.element__delete-button {
   background-color: transparent;
   width: 20px;
   height: 20px;
   border-style: none;
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: 25px;
+  right: 20px;
   background-image: url(../../../images/trash-box.svg);
   align-self: center;
   background-repeat: no-repeat;
@@ -17,6 +17,6 @@
   cursor: pointer;
 }
 
-.element__close-button:hover {
+.element__delete-button:hover {
   opacity: 0.6;
 }
