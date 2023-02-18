@@ -1,0 +1,22 @@
+.element__close-button {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-style: none;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-image: url(../../../images/trash-box.svg);
+  align-self: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: content-box;
+  background-size: contain;
+  flex-shrink: 0;
+  transition: opacity 0.5s linear;
+  cursor: pointer;
+}
+
+.element__close-button:hover {
+  opacity: 0.6;
+}
