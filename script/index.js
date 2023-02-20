@@ -12,12 +12,15 @@ const popUpdescription = document.querySelector(".profile__description");
 const elementsContainer = document.querySelector(".elements__section-elements");
 
 const formElementAccount = document.forms["popup-form-account"];
-const nameInput = document.forms["popup-form-account"].elements["input-name"];
-const jobInput = document.forms["popup-form-account"].elements["input-description"];
+const nameInput = formElementAccount.elements["input-name"];
+const jobInput = formElementAccount.elements["input-description"];
 
 const formElementCard = document.forms["popup-form-card"];
-const placeInput = document.forms["popup-form-card"].elements["input-name"];
-const linkInput = document.forms["popup-form-card"].elements["input-description"];
+const placeInput = formElementCard.elements["input-name"];
+const linkInput = formElementCard.elements["input-description"];
+
+const bigImage = popUpImage.querySelector(".popup__image");
+const bigImageDescription = popUpImage.querySelector(".popup__description");
 
 const initialCards = [
   {
@@ -69,50 +72,47 @@ function handleFormSubmitAccount(evt) {
 
 function handleFormSubmitCard(evt) {
   evt.preventDefault();
-  eddCard(placeInput.value, linkInput.value);
+  addCard(placeInput.value, linkInput.value);
   closePopup(popUpCard);
   evt.target.reset();
 }
 
-function eddCard(textDescription, link) {
-  const cardTemplate = document.querySelector("#card-template").content; // let- const
-  const elementContainer = cardTemplate.querySelector(".element").cloneNode(true); // let- const
+function createCard(textDescription, link) {
+  const cardTemplate = document.querySelector("#card-template").content;
+  const cardElement = cardTemplate.querySelector(".element").cloneNode(true);
 
-  const imageElement = elementContainer.querySelector(".element__image");
+  const imageElement = cardElement.querySelector(".element__image");
   imageElement.alt = textDescription;
   imageElement.src = link || "./images/places/yacubovich.jpg";
   imageElement.addEventListener("click", function (evt) {
-    popUpImage.classList.add("popup_opened");
-    const bigImage = popUpImage.querySelector(".popup__image");
-    const bigImageDescription = popUpImage.querySelector(".popup__description");
-    bigImage.src = link || imageElement.src;
-    bigImageDescription.textContent = textDescription || descriptionElement.textContent;
+    openPopup(popUpImage);
+    bigImage.src = imageElement.src;
+    bigImageDescription.textContent = descriptionElement.textContent;
   });
-  const descriptionContainer = document.createElement("div");
-  descriptionContainer.classList.add("element__description-block");
 
-  const descriptionElement = elementContainer.querySelector(".element__description");
+  const descriptionElement = cardElement.querySelector(".element__description");
   descriptionElement.textContent = textDescription || "Не надо так!";
 
-  const buttonLike = elementContainer.querySelector(".element__like");
-  buttonLike.setAttribute("aria-label", "Нравится.");
+  const buttonLike = cardElement.querySelector(".element__like");
   buttonLike.addEventListener("click", function (evt) {
     evt.target.classList.toggle("element__like_liked");
   });
 
-  const buttonDelete = elementContainer.querySelector(".element__delete-button");
-  buttonDelete.setAttribute("aria-label", "Удалить.");
+  const buttonDelete = cardElement.querySelector(".element__delete-button");
   buttonDelete.addEventListener("click", function () {
-    elementContainer.remove(buttonDelete.parentElement);
+    cardElement.remove(buttonDelete.parentElement);
   });
 
-  elementsContainer.prepend(elementContainer);
-  elementContainer.prepend(imageElement, descriptionContainer, buttonDelete);
-  descriptionContainer.prepend(descriptionElement, buttonLike);
+  return cardElement;
+}
+
+function addCard(textDescription, link) {
+  const cardElement = createCard(textDescription, link);
+  elementsContainer.prepend(cardElement);
 }
 
 for (let i = 0; i < initialCards.length; i++) {
-  eddCard(initialCards[i].name, initialCards[i].link);
+  addCard(initialCards[i].name, initialCards[i].link);
 }
 
 editButton.addEventListener("click", openPopUpAccount);
