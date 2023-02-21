@@ -100,7 +100,7 @@ function createCard(textDescription, link) {
 
   const buttonDelete = cardElement.querySelector(".element__delete-button");
   buttonDelete.addEventListener("click", function () {
-    cardElement.remove(buttonDelete.parentElement);
+    cardElement.remove();
   });
 
   return cardElement;
