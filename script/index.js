@@ -51,11 +51,23 @@ const initialCards = [
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  // document.removeEventListener("keydown", () => {});
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      closePopupEsc(popup);
+    }
+  });
 }
+
+const closePopupEsc = (popup) => {
+  if (popup.classList.contains("popup_opened")) {
+    closePopup(popup);
+  }
+};
 
 function openPopUpAccount() {
   openPopup(popUpAccount);
@@ -124,3 +136,10 @@ closeButtons.forEach((button) => {
 
 formElementAccount.addEventListener("submit", handleFormSubmitAccount);
 formElementCard.addEventListener("submit", handleFormSubmitCard);
+
+const closeOverlay = document.querySelectorAll(".popup");
+closeOverlay.forEach((area) => {
+  area.addEventListener("click", (evt) => {
+    closePopup(evt.target);
+  });
+});

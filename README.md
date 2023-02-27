@@ -11,7 +11,7 @@
 # [Ссылка на страницу.](https://dmitriyrusov.github.io/mesto/)
 # [Ссылка на макет. Часть 1](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4)
 # [Ссылка на макет. Часть 2](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5)
-
+# [Ссылка на макет. Часть 3](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6)
 ### _Реализация:_ ###
 
 - Figma
