@@ -22,6 +22,8 @@ const linkInput = formElementCard.elements["input-description"];
 const bigImage = popUpImage.querySelector(".popup__image");
 const bigImageDescription = popUpImage.querySelector(".popup__description");
 
+const popups = document.querySelectorAll(".popup");
+
 const initialCards = [
   {
     name: "Териберка.",
@@ -49,25 +51,22 @@ const initialCards = [
   },
 ];
 
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  // document.removeEventListener("keydown", () => {});
-}
-
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-      closePopupEsc(popup);
-    }
-  });
+  document.addEventListener("keydown", closePopupEsc);
 }
 
-const closePopupEsc = (popup) => {
-  if (popup.classList.contains("popup_opened")) {
-    closePopup(popup);
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
+}
+
+const closePopupEsc = (evt) => {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
   }
-};
+}
 
 function openPopUpAccount() {
   openPopup(popUpAccount);
@@ -87,6 +86,12 @@ function handleFormSubmitCard(evt) {
   addCard(placeInput.value, linkInput.value);
   closePopup(popUpCard);
   evt.target.reset();
+
+  // альтернатива toggleButtonStatus из validate.js
+  // let submitButton = popUpCard.querySelector(".popup__button-save");
+  // if (placeInput.value == "" || linkInput.value == "") {
+  //   submitButton.classList.add("popup__button-save_inactive");
+  // }
 }
 
 function createCard(textDescription, link) {
@@ -99,6 +104,7 @@ function createCard(textDescription, link) {
   imageElement.addEventListener("click", function (evt) {
     openPopup(popUpImage);
     bigImage.src = imageElement.src;
+    bigImage.alt = descriptionElement.textContent;
     bigImageDescription.textContent = descriptionElement.textContent;
   });
 
@@ -129,17 +135,28 @@ for (let i = 0; i < initialCards.length; i++) {
 
 editButton.addEventListener("click", openPopUpAccount);
 addButton.addEventListener("click", () => openPopup(popUpCard));
-closeButtons.forEach((button) => {
-  const popup = button.closest(".popup");
-  button.addEventListener("click", () => closePopup(popup));
-});
+// closeButtons.forEach((button) => {
+//   const popup = button.closest(".popup");
+//   button.addEventListener("click", () => closePopup(popup));
+// });
 
 formElementAccount.addEventListener("submit", handleFormSubmitAccount);
 formElementCard.addEventListener("submit", handleFormSubmitCard);
 
-const closeOverlay = document.querySelectorAll(".popup");
-closeOverlay.forEach((area) => {
-  area.addEventListener("click", (evt) => {
-    closePopup(evt.target);
+// const closeOverlay = document.querySelectorAll(".popup");
+// closeOverlay.forEach((area) => {
+//   area.addEventListener("click", (evt) => {
+//     closePopup(evt.target);
+//   });
+// });
+
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__button-close")) {
+      closePopup(popup);
+    }
   });
 });

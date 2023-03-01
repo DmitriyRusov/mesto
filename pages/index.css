@@ -49,7 +49,7 @@
 
 @import url(../blocks/hover-animation/hover-animation.css);
 
-@import url(../blocks/input-account-description-error/);
-@import url(../blocks/input-account-name-error/);
-@import url(../blocks/input-card-description-error/);
-@import url(../blocks/input-card-name-error/);
+@import url(../blocks/input-account-description-error/input-account-description-error.css);
+@import url(../blocks/input-account-name-error/input-account-name-error.css);
+@import url(../blocks/input-card-description-error/input-card-description-error.css);
+@import url(../blocks/input-card-name-error/input-card-name-error.css);
