@@ -1,3 +1,6 @@
+import { FormValidator, classSelector } from "./FormValidator.js";
+import { Card } from "./Card.js";
+
 const popUpAccount = document.querySelector(".popup_type_account");
 const popUpCard = document.querySelector(".popup_type_card");
 const popUpImage = document.querySelector(".popup_type_image");
@@ -23,6 +26,11 @@ const bigImage = popUpImage.querySelector(".popup__image");
 const bigImageDescription = popUpImage.querySelector(".popup__description");
 
 const popups = document.querySelectorAll(".popup");
+
+const cardItemValidate = new FormValidator(classSelector, formElementCard);
+cardItemValidate.enableValidation();
+const profileEditeValidate = new FormValidator(classSelector, formElementAccount);
+profileEditeValidate.enableValidation();
 
 const initialCards = [
   {
@@ -66,7 +74,7 @@ const closePopupEsc = (evt) => {
     const openedPopup = document.querySelector(".popup_opened");
     closePopup(openedPopup);
   }
-}
+};
 
 function openPopUpAccount() {
   openPopup(popUpAccount);
@@ -83,72 +91,29 @@ function handleFormSubmitAccount(evt) {
 
 function handleFormSubmitCard(evt) {
   evt.preventDefault();
-  addCard(placeInput.value, linkInput.value);
+  let obj = new Object();
+  obj.name = placeInput.value;
+  obj.link = linkInput.value;
+  initialCards.push(obj);
+  addCard(initialCards[initialCards.length - 1], "#card-template");
   closePopup(popUpCard);
   evt.target.reset();
-
-  // альтернатива toggleButtonStatus из validate.js
-  // let submitButton = popUpCard.querySelector(".popup__button-save");
-  // if (placeInput.value == "" || linkInput.value == "") {
-  //   submitButton.classList.add("popup__button-save_inactive");
-  // }
 }
 
-function createCard(textDescription, link) {
-  const cardTemplate = document.querySelector("#card-template").content;
-  const cardElement = cardTemplate.querySelector(".element").cloneNode(true);
-
-  const imageElement = cardElement.querySelector(".element__image");
-  imageElement.alt = textDescription;
-  imageElement.src = link || "./images/places/yacubovich.jpg";
-  imageElement.addEventListener("click", function (evt) {
-    openPopup(popUpImage);
-    bigImage.src = imageElement.src;
-    bigImage.alt = descriptionElement.textContent;
-    bigImageDescription.textContent = descriptionElement.textContent;
-  });
-
-  const descriptionElement = cardElement.querySelector(".element__description");
-  descriptionElement.textContent = textDescription || "Не надо так!";
-
-  const buttonLike = cardElement.querySelector(".element__like");
-  buttonLike.addEventListener("click", function (evt) {
-    evt.target.classList.toggle("element__like_liked");
-  });
-
-  const buttonDelete = cardElement.querySelector(".element__delete-button");
-  buttonDelete.addEventListener("click", function () {
-    cardElement.remove();
-  });
-
-  return cardElement;
-}
-
-function addCard(textDescription, link) {
-  const cardElement = createCard(textDescription, link);
-  elementsContainer.prepend(cardElement);
+function addCard(initialCards, templateSelector) {
+  const cardElement = new Card(initialCards, templateSelector);
+  elementsContainer.prepend(cardElement.randerCard());
 }
 
 for (let i = 0; i < initialCards.length; i++) {
-  addCard(initialCards[i].name, initialCards[i].link);
+  addCard(initialCards[i], "#card-template");
 }
 
 editButton.addEventListener("click", openPopUpAccount);
 addButton.addEventListener("click", () => openPopup(popUpCard));
-// closeButtons.forEach((button) => {
-//   const popup = button.closest(".popup");
-//   button.addEventListener("click", () => closePopup(popup));
-// });
 
 formElementAccount.addEventListener("submit", handleFormSubmitAccount);
 formElementCard.addEventListener("submit", handleFormSubmitCard);
-
-// const closeOverlay = document.querySelectorAll(".popup");
-// closeOverlay.forEach((area) => {
-//   area.addEventListener("click", (evt) => {
-//     closePopup(evt.target);
-//   });
-// });
 
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
@@ -160,3 +125,5 @@ popups.forEach((popup) => {
     }
   });
 });
+
+export { popUpImage, bigImage, bigImageDescription, openPopup };
