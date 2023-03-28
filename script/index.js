@@ -1,11 +1,11 @@
-import { FormValidator, classSelector } from "./FormValidator.js";
+import { FormValidator, validatorConfig } from "./FormValidator.js";
+import { initialCards } from "./utils/constants.js";
+import { openPopup, closePopup } from "./utils/utils.js";
 import { Card } from "./Card.js";
 
 const popUpAccount = document.querySelector(".popup_type_account");
 const popUpCard = document.querySelector(".popup_type_card");
-const popUpImage = document.querySelector(".popup_type_image");
 
-const closeButtons = document.querySelectorAll(".popup__button-close");
 const editButton = document.querySelector(".profile__edit-button");
 const addButton = document.querySelector(".profile__add-button");
 
@@ -22,59 +22,12 @@ const formElementCard = document.forms["popup-form-card"];
 const placeInput = formElementCard.elements["input-name"];
 const linkInput = formElementCard.elements["input-description"];
 
-const bigImage = popUpImage.querySelector(".popup__image");
-const bigImageDescription = popUpImage.querySelector(".popup__description");
-
 const popups = document.querySelectorAll(".popup");
 
-const cardItemValidate = new FormValidator(classSelector, formElementCard);
+const cardItemValidate = new FormValidator(validatorConfig, formElementCard);
 cardItemValidate.enableValidation();
-const profileEditeValidate = new FormValidator(classSelector, formElementAccount);
+const profileEditeValidate = new FormValidator(validatorConfig, formElementAccount);
 profileEditeValidate.enableValidation();
-
-const initialCards = [
-  {
-    name: "Териберка.",
-    link: "./images/places/teriberka.jpg",
-  },
-  {
-    name: "Москва.",
-    link: "./images/places/moscow.jpg",
-  },
-  {
-    name: "Кинерма.",
-    link: "./images/places/kinerma.jpg",
-  },
-  {
-    name: "Кировск.",
-    link: "./images/places/kirkovsk.jpg",
-  },
-  {
-    name: "Самара.",
-    link: "./images/places/samara.jpg",
-  },
-  {
-    name: "Иваново.",
-    link: "./images/places/ivanovo.jpg",
-  },
-];
-
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closePopupEsc);
-}
-
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closePopupEsc);
-}
-
-const closePopupEsc = (evt) => {
-  if (evt.key === "Escape") {
-    const openedPopup = document.querySelector(".popup_opened");
-    closePopup(openedPopup);
-  }
-};
 
 function openPopUpAccount() {
   openPopup(popUpAccount);
@@ -91,11 +44,10 @@ function handleFormSubmitAccount(evt) {
 
 function handleFormSubmitCard(evt) {
   evt.preventDefault();
-  let obj = new Object();
-  obj.name = placeInput.value;
-  obj.link = linkInput.value;
-  initialCards.push(obj);
-  addCard(initialCards[initialCards.length - 1], "#card-template");
+  const cardData = new Object();
+  cardData.name = placeInput.value;
+  cardData.link = linkInput.value;
+  addCard(cardData, "#card-template");
   closePopup(popUpCard);
   evt.target.reset();
 }
@@ -125,5 +77,3 @@ popups.forEach((popup) => {
     }
   });
 });
-
-export { popUpImage, bigImage, bigImageDescription, openPopup };

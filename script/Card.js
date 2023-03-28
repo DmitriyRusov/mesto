@@ -1,4 +1,5 @@
-import { popUpImage, bigImage, bigImageDescription, openPopup } from "./index.js";
+import { popUpImage, bigImage, bigImageDescription } from "./utils/constants.js";
+import { openPopup } from "./utils/utils.js";
 
 class Card {
   constructor(cardObj, templateSelector) {
@@ -42,7 +43,7 @@ class Card {
   }
 
   _openImage() {
-    this._popUpImage = document.querySelector(".popup_type_image");
+    //this._popUpImage = document.querySelector(".popup_type_image");
     openPopup(popUpImage);
     bigImage.src = this._cardImage;
     bigImage.alt = this._cardName;
