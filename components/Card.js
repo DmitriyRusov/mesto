@@ -1,12 +1,10 @@
-import { popUpImage, bigImage, bigImageDescription } from "./utils/constants.js";
-import { openPopup } from "./utils/utils.js";
-
 class Card {
-  constructor(cardObj, templateSelector) {
-    this._card = cardObj;
+  constructor({ data, handleCardClick }, templateSelector) {
+    this._card = data;
     this._cardName = this._card.name;
     this._cardImage = this._card.link;
     this._cardTemplate = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _createCard() {
@@ -42,18 +40,10 @@ class Card {
     this._buttonLike.classList.toggle("element__like_liked");
   }
 
-  _openImage() {
-    //this._popUpImage = document.querySelector(".popup_type_image");
-    openPopup(popUpImage);
-    bigImage.src = this._cardImage;
-    bigImage.alt = this._cardName;
-    bigImageDescription.textContent = this._cardName;
-  }
-
   _eventListeners = () => {
     this._buttonLike.addEventListener("click", () => this._toogleLike());
     this._buttonDelete.addEventListener("click", () => this._removeCard());
-    this._cardElementImage.addEventListener("click", () => this._openImage());
+    this._cardElementImage.addEventListener("click", () => this._handleCardClick(this._cardName, this._cardImage));
   };
 }
 
