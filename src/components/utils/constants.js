@@ -1,27 +1,34 @@
+const teriberka = new URL('../../images/places/teriberka.jpg', import.meta.url);
+const moscow = new URL('../../images/places/moscow.jpg', import.meta.url);
+const kinerma = new URL('../../images/places/kinerma.jpg', import.meta.url);
+const kirkovsk = new URL('../../images/places/kirkovsk.jpg', import.meta.url);
+const samara = new URL('../../images/places/samara.jpg', import.meta.url);
+const ivanovo = new URL('../../ivanovo.jpg', import.meta.url);
+
 const initialCards = [
   {
     name: "Териберка.",
-    link: "./images/places/teriberka.jpg",
+    link: teriberka,
   },
   {
     name: "Москва.",
-    link: "./images/places/moscow.jpg",
+    link: moscow,
   },
   {
     name: "Кинерма.",
-    link: "./images/places/kinerma.jpg",
+    link: kinerma,
   },
   {
     name: "Кировск.",
-    link: "./images/places/kirkovsk.jpg",
+    link: kirkovsk,
   },
   {
     name: "Самара.",
-    link: "./images/places/samara.jpg",
+    link: samara,
   },
   {
     name: "Иваново.",
-    link: "./images/places/ivanovo.jpg",
+    link: ivanovo,
   },
 ];
 

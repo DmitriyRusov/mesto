@@ -5,17 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto: карточки и попапы</title>
-    <link rel="icon" href="./images/favicon.png">
-    <link rel="stylesheet" href="./pages/index.css">
-    <script type="module" src="./pages/index.js" defer></script>
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="Место.">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Место.">
     </header>
     <main class="main">
       <section class="profile">
-        <img class="profile__logo" src="./images/favicon.jpg" alt="Фавикон.">
+        <img class="profile__logo" src="<%=require('./images/favicon.jpg')%>" alt="Фавикон.">
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__title">Big Red Beard</h1>
@@ -69,7 +66,7 @@
       </div>
       <div class="popup popup_type_image">
         <div class="popup__container-image">
-          <img class="popup__image" src="./images/places/yacubovich.jpg" alt="#">
+          <img class="popup__image" src="<%=require('./images/places/yacubovich.jpg')%>" alt="#">
           <h3 class="popup__description">Грустный Якубович</h3>
           <button type="button" class="popup__button-close hover-animation"></button>
         </div>

@@ -7,6 +7,8 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 
+import './index.css';
+
 const cardItemValidate = new FormValidator(validatorConfig, formElementCard);
 cardItemValidate.enableValidation();
 const profileEditeValidate = new FormValidator(validatorConfig, formElementAccount);
