@@ -55,11 +55,13 @@ class FormValidator {
   }
 
   enableValidation() {
-    const formList = Array.from(document.querySelectorAll(this.validatorConfig.formSelector));
+    const formList = Array.from(this._formElement);
+
     formList.forEach((formElement) => {
       formElement.addEventListener("submit", (evt) => {
         evt.preventDefault();
       });
+
       this._setEventListeners();
     });
   }
@@ -78,6 +80,14 @@ class FormValidator {
       this._buttonElement.classList.remove(this.validatorConfig.inactiveButtonClass);
       this._buttonElement.removeAttribute("disabled");
     }
+  }
+
+  resetValidation() {
+    this._toggleButtonStatus();
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
   }
 }
 
