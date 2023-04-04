@@ -12,9 +12,10 @@ class UserInfo {
   }
 
   setUserInfo({ userName, userDescription }) {
-    this._userName = userName;
-    this._userDescription = userDescription;
-  }
+    this._userName.textContent = userName;
+    this._userDescription.textContent = userDescription;
+    }
+    
 }
 
 export { UserInfo };

@@ -27,7 +27,7 @@ const standartCards = new Section(
 
 const popupCardWithForm = new PopupWithForm(".popup_type_card", {
   callbackSubmitForm: (cardData) => {
-    let newCard = createCard({ name: cardData["input-name"], link: cardData["input-description"] });
+    const newCard = createCard({ name: cardData["input-name"], link: cardData["input-description"] });
 
     standartCards.addItem(newCard);
 
@@ -58,17 +58,16 @@ addButton.addEventListener("click", () => {
   cardItemValidate.resetValidation();
 });
 
+const editInfo = new UserInfo({ selectorUserName: ".profile__title", selectorUserAbout: ".profile__description" });
+
 const popupEditProfile = new PopupWithForm(".popup_type_account", {
   callbackSubmitForm: (userInfo) => {
-    popName.textContent = userInfo["input-name"];
-    popUpdescription.textContent = userInfo["input-description"];
+    editInfo.setUserInfo({ userName: userInfo["input-name"], userDescription: userInfo["input-description"] });
     popupEditProfile.close();
   },
 });
 
 popupEditProfile.setEventListeners();
-
-const editInfo = new UserInfo({ selectorUserName: ".profile__title", selectorUserAbout: ".profile__description" });
 
 editButton.addEventListener("click", () => {
   const userData = editInfo.getUserInfo();

@@ -55,15 +55,11 @@ class FormValidator {
   }
 
   enableValidation() {
-    const formList = Array.from(this._formElement);
-
-    formList.forEach((formElement) => {
-      formElement.addEventListener("submit", (evt) => {
-        evt.preventDefault();
-      });
-
-      this._setEventListeners();
+    this._formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
     });
+
+    this._setEventListeners();
   }
 
   _hasInvalidInput() {
