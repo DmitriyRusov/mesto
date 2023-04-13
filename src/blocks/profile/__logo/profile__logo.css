@@ -1,17 +1,14 @@
-/* .profile__logo {
-  max-width: 128px;
-  max-height: 128px;
-  border-radius: 64px;
-  object-fit: cover;
-} */
-
-
 .profile__logo {
   border-radius: 50%;
   width: 120px;
   height: 120px;
   margin: 0 30px 0 0;
   object-fit: cover;
+  position: relative;
+
+  background-image: url(../../../images/favicon.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 800px) {
@@ -22,3 +19,25 @@
     margin-right: 0;
   }
 }
+
+.profile__logo::before {
+  background-color: #000;
+  opacity: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../../../images/icon-pen.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+  transition: opacity 0.5s linear;
+}
+
+.profile__logo:hover::before {
+  opacity: 0.8;
+  cursor: pointer;
+}
+

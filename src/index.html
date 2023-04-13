@@ -12,7 +12,7 @@
     </header>
     <main class="main">
       <section class="profile">
-        <img class="profile__logo" src="<%=require('./images/favicon.jpg')%>" alt="Фавикон.">
+        <div class="profile__logo"></div>
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__title">Big Red Beard</h1>
@@ -30,7 +30,10 @@
               <img class="element__image" alt="Описание" src="#">
               <div class="element__description-block">
                 <h3 class="element__description">Описание</h3>
-                <button class="element__like" aria-label="Нравится."></button>
+                <div class="element__like-box">
+                  <button class="element__like" aria-label="Нравится."></button>
+                  <p class="element__number-likes">0</p>
+                </div>
               </div>
               <button class="element__delete-button" aria-label="Удалить."></button>
             </li>
@@ -71,6 +74,27 @@
           <button type="button" class="popup__button-close hover-animation"></button>
         </div>
       </div>
+
+      <div class="popup popup_type_delete-card">
+        <div class="popup__container popup__container_delete-card ">
+          <h2 class="popup__title">Вы уверены?</h2>
+            <button type="submit" class="popup__button-save">Да</button>
+          <button type="button" class="popup__button-close hover-animation"></button>
+        </div>
+      </div>
+
+       <div class="popup popup_type_avatar">
+        <div class="popup__container popup__container_avatar">
+          <h2 class="popup__title">Аватар</h2>
+            <form class="popup__form" name="popup-form-avatar" novalidate>
+              <input type="url" placeholder="Ссылка на картинку" id="input-card-description" class="popup__input" name="input-description" value="" required>
+              <span class="input-card-description-error popup__span-error">Необходимо заполнить данное поле</span>
+              <button type="submit" class="popup__button-save">Сохранить</button>
+            </form>
+          <button type="button" class="popup__button-close hover-animation"></button>
+        </div>
+      </div>
+
     </main>
     <footer class="footer">
       <p class="footer__description">© 2023 Mesto Russia</p>

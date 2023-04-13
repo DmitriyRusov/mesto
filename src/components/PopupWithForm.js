@@ -1,7 +1,7 @@
 import { Popup } from "./Popup.js";
 
 class PopupWithForm extends Popup {
-  constructor(popupSelector, { callbackSubmitForm }) {
+  constructor(popupSelector, callbackSubmitForm) {
     super(popupSelector);
     this._callbackSubmitForm = callbackSubmitForm;
     this._formElement = this._popup.querySelector(".popup__form");
@@ -28,6 +28,14 @@ class PopupWithForm extends Popup {
   close() {
     super.close();
     this._formElement.reset();
+  }
+
+  loadingConfirm(isLoading, content) {
+    if (isLoading) {
+      this._buttonElement.textContent = "Сохранение...";
+    } else {
+      this._buttonElement.textContent = content;
+    }
   }
 }
 

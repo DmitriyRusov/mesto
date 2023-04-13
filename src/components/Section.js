@@ -1,18 +1,22 @@
-class Section {
-  constructor({ items, renderer }, containerSelector) {
-    this._items = items;
+export default class Section {
+  constructor({ renderer }, containerSelector) {
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
 
-  renderItems() {
-    this._items.forEach((item) => {
-      this._renderer(item);
-    });
+  addItem(item) {
+    this._container.prepend(item);
   }
 
-  addItem(element) {
-    this._container.prepend(element);
+  removeCard(item) {
+    console.log("sectionRemoveElement", item);
+    this._container.remove(item);
+  }
+
+  renderItems(items) {
+    for (let i = items.length - 1; i > -1; i--) {
+      this._renderer(items[i]);
+    }
   }
 }
 

@@ -1,7 +1,9 @@
 class UserInfo {
-  constructor({ selectorUserName, selectorUserAbout }) {
+  constructor({ selectorUserName, selectorUserAbout, selectorAvatar }) {
     this._userName = document.querySelector(selectorUserName);
     this._userDescription = document.querySelector(selectorUserAbout);
+    this._selectorAvatar = document.querySelector(selectorAvatar)
+   // console.log(this._selectorAvatar)
   }
 
   getUserInfo() {
@@ -11,9 +13,13 @@ class UserInfo {
     };
   }
 
-  setUserInfo({ userName, userDescription }) {
-    this._userName.textContent = userName;
-    this._userDescription.textContent = userDescription;
+  setUserInfo(userData) {
+    this._userName.textContent = userData.name;
+   this._userDescription.textContent = userData.about;
+    }
+
+    setAvatar (userAvatar) {
+      this._selectorAvatar.style.backgroundImage = `url(${userAvatar})`;
     }
     
 }
